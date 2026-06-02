@@ -50,3 +50,288 @@
         .logo {
             font-family: var(--font-heading);
             font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-color); }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1507842217121-9e9f14781f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background-color: #a93226; }
+
+        /* --- Book Grid Section --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .book-image {
+            height: 400px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .book-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .book-author {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .book-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-link {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Quote Section --- */
+        .quote-section {
+            background-color: #e8e6e1;
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--primary-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 3rem 20px;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">Timeless Classics</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover the World's Greatest Literature</h1>
+        <p>"A reader lives a thousand lives before he dies. The man who never reads lives only one."</p>
+        <a href="#collection" class="btn">Browse Collection</a>
+    </section>
+
+    <!-- Book Collection -->
+    <section id="collection" class="container">
+        <h2 class="section-title">Featured Masterpieces</h2>
+        <div class="book-grid">
+            
+            <!-- Book 1 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <!-- Placeholder image representing a classic book cover -->
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pride and Prejudice">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Pride and Prejudice</h3>
+                    <p class="book-author">by Jane Austen</p>
+                    <p class="book-desc">A romantic novel of manners that depicts the British Regency era. It follows the emotional development of Elizabeth Bennet.</p>
+                    <a href="#" class="read-link">Read Summary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Great Gatsby">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">The Great Gatsby</h3>
+                    <p class="book-author">by F. Scott Fitzgerald</p>
+                    <p class="book-desc">A portrait of the Jazz Age in all of its decadence and excess, exploring themes of idealism and social upheaval.</p>
+                    <a href="#" class="read-link">Read Summary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="1984">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">1984</h3>
+                    <p class="book-author">by George Orwell</p>
+                    <p class="book-desc">A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism and mass surveillance.</p>
+                    <a href="#" class="read-link">Read Summary &rarr;</a>
+                </div>
+            </div>
+
+             <!-- Book 4 -->
+             <div class="book-card">
+                <div class="book-image">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Moby Dick">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Moby Dick</h3>
+                    <p class="book-author">by Herman Melville</p>
+                    <p class="book-desc">The narrative of Captain Ahab's obsessive quest to kill the white whale that bit off his leg at the knee.</p>
+                    <a href="#" class="read-link">Read Summary &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <p class="quote-text">"There is no friend as loyal as a book."</p>
+        <p style="margin-top: 10px; font-weight: bold;">— Ernest Hemingway</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Timeless Classics Library. All rights reserved.</p>
+        <p>Celebrating the beauty of written words.</p>
+    </footer>
+
+</body>
+</html>
